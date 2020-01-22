@@ -1,12 +1,8 @@
 import React from 'react';
-import HamburgerButton from '../HambugerButton';
+import MainMenu from '../MainMenu';
 
 function Header() {
-  return (
-    <div>
-      <HamburgerButton />
-    </div>
-  );
+  return <MainMenu />;
 }
 
 export default Header;

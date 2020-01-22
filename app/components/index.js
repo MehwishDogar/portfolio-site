@@ -1,11 +1,12 @@
 import React from 'react';
 import Screen from './Screen';
+import MainMenu from './MainMenu';
 
 const allComponents = () => (
   <div>
+    <MainMenu />
     <Screen />
     {/* <SocialIcons />
-    <MainMenu />
     <LinkedButton />
     <Avatar />
     <A />

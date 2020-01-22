@@ -44,7 +44,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomeandContactsPage} />
         <Route path="/skills" component={SkillsPage} />
-        <Route path="" component={AboutmePage} />
+        <Route path="/aboutme" component={AboutmePage} />
         <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>

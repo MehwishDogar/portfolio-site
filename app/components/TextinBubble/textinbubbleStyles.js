@@ -10,6 +10,7 @@ const textinbubbleStyles = css`
   width: 200px;
   height: 100px;
   padding: 5px;
+  z-index: 1;
   & :after {
     content: '';
     position: absolute;
@@ -22,6 +23,7 @@ const textinbubbleStyles = css`
     border-right: 0;
     margin-top: -15px;
     margin-right: -15px;
+    z-index: 1;
   }
 `;
 
