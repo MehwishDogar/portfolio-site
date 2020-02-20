@@ -2,7 +2,6 @@ import { css } from 'styled-components';
 
 const progressBarStyles = css`
   position: relative;
-  bottom: 90px !important;
   width: 240px;
   cursor: pointer;
   transform: rotateZ(-90deg);

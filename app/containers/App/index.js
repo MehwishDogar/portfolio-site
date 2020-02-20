@@ -14,7 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 
-import { SkillsPage } from 'containers/SkillsPage';
+import SkillsPage from 'containers/SkillsPage';
 import TextinBubble from 'components/TextinBubble';
 import Roboticgirl from 'components/Roboticgirl';
 import GlobalStyle from '../../global-styles';

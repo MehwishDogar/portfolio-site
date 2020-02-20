@@ -8,9 +8,8 @@ const screenStyles = css`
   text-align: center;
   height: 100%;
   width: 100%;
-  & div {
-    position: relative;
-    bottom: 20px;
+  & > div:first-child {
+    top: 0;
   }
 `;
 
