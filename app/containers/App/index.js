@@ -11,14 +11,16 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 
+import SkillsPage from 'containers/SkillsPage';
+import TextinBubble from 'components/TextinBubble';
+import Roboticgirl from 'components/Roboticgirl';
 import GlobalStyle from '../../global-styles';
 import { allComponents } from '../../components';
+import { HomeandContactsPage } from '../HomeandContactsPage';
+import { AboutmePage } from '../AboutmePage';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -40,12 +42,14 @@ export default function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route exact path="/" component={HomeandContactsPage} />
+        <Route path="/skills" component={SkillsPage} />
+        <Route path="/aboutme" component={AboutmePage} />
         <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
+      <TextinBubble />
+      <Roboticgirl />
       <GlobalStyle />
     </AppWrapper>
   );

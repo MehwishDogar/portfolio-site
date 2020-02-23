@@ -6,8 +6,8 @@ const socialIconsStyles = css`
   border-radius: 50%
   display: inline-block;
     & img {
-        max-width: 20px;
-        max-height: 20px;
+        max-width: 70px;
+        max-height: 70px;
     }
 `;
 

@@ -2,22 +2,40 @@ import { css } from 'styled-components';
 
 const progressBarStyles = css`
   position: relative;
-  width: 240px;
+  margin: 3px;
+  width: 30px;
   cursor: pointer;
-  transform: rotateZ(-90deg);
   background-color: #212121;
   display: inline-block;
   border-radius: 10px;
-  height: 30px;
-  & div {
-    overflow: hidden;
-    height: 30px;
-    width: 0%;
-    background-color: #ef6;
+  height: 200px;
+  overflow: hidden;
+  & :nth-child(2n + 1) > span {
+    background: #87ceeb;
+  }
+  & :nth-child(3n + 1) > span {
+    background: #00fa9a;
+  }
+  & > span {
+    position: absolute;
+    bottom: -2px;
+    display: block;
+    height: 0%;
+    width: 30px;
+    background-color: #cd5c5c;
     border-radius: 10px;
-    text-align: center;
-    transform-origin: bottom-center;
     transition: 2s all;
+  }
+  & > div {
+    position: absolute;
+    bottom: -2px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    height: 20px;
+    width: 100px;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 1.6;
   }
 `;
 

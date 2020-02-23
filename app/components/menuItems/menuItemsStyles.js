@@ -10,6 +10,7 @@ const menuItemsStyles = css`
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 `;

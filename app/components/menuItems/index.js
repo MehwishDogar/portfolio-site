@@ -4,9 +4,9 @@ import StyledMenuItems from './StyledMenuItems';
 
 const menuItems = () => (
   <StyledMenuItems>
-    <a href="h">Home & Contacts</a>
-    <a href="#h">Skills</a>
-    <a href="#h">About Me</a>
+    <a href="/">Home & Contacts</a>
+    <a href="/skills">Skills</a>
+    <a href="/aboutme">About Me</a>
   </StyledMenuItems>
 );
 

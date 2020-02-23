@@ -42,3 +42,8 @@ export default function request(url, options) {
     .then(checkStatus)
     .then(parseJSON);
 }
+
+export function requestAPI(url, options) {
+  const baseURL = 'https://portfoliosite-backend.herokuapp.com/api/';
+  return request(`${baseURL}${url}`, options);
+}
