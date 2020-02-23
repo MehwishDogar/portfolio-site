@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import progressBarStyles from './progressBarStyles';
 
-const StyledProgressBar = styled.div`
+const StyledProgressBar = styled.span`
   ${progressBarStyles};
 `;
 

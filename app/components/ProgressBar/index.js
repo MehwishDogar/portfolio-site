@@ -4,7 +4,8 @@ import StyledProgressBar from './StyledProgressBar';
 
 const ProgressBar = ({ name, percentage }) => (
   <StyledProgressBar>
-    <div style={{ width: `${percentage}%` }}>{name}</div>
+    <span style={{ height: `${percentage}%` }} />
+    <div>{name}</div>
   </StyledProgressBar>
 );
 
