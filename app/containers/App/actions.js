@@ -15,45 +15,67 @@
  *    }
  */
 
-import { LOAD_REPOS, LOAD_REPOS_SUCCESS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_MESSAGES,
+  LOAD_MESSAGES_SUCCESS,
+  LOAD_MESSAGES_ERROR,
+  ADD_MESSAGE,
+  UPDATE_MESSAGE,
+} from './constants';
 
 /**
- * Load the repositories, this action starts the request saga
+ * Load the messages, this action starts the request saga
  *
- * @return {object} An action object with a type of LOAD_REPOS
+ * @return {object} An action object with a type of LOAD_MESSAGES
+ * @param  {string} message The current message
  */
-export function loadRepos() {
+export function loadMessages(message) {
   return {
-    type: LOAD_REPOS,
+    type: LOAD_MESSAGES,
+    message,
   };
 }
 
 /**
- * Dispatched when the repositories are loaded by the request saga
+ * Dispatched when the messages are loaded by the request saga
  *
- * @param  {array} repos The repository data
- * @param  {string} username The current username
+ * @param  {array} messages The message data
  *
- * @return {object}      An action object with a type of LOAD_REPOS_SUCCESS passing the repos
+ * @return {object}      An action object with a type of LOAD_MESSAGES_SUCCESS passing the messages
  */
-export function reposLoaded(repos, username) {
+export function messagesLoaded(messages) {
   return {
-    type: LOAD_REPOS_SUCCESS,
-    repos,
-    username,
+    type: LOAD_MESSAGES_SUCCESS,
+    messages,
   };
 }
 
 /**
- * Dispatched when loading the repositories fails
+ * Dispatched when loading the messages fails
  *
  * @param  {object} error The error
  *
- * @return {object}       An action object with a type of LOAD_REPOS_ERROR passing the error
+ * @return {object}       An action object with a type of LOAD_MESSAGES_ERROR passing the error
  */
-export function repoLoadingError(error) {
+export function messageLoadingError(error) {
   return {
-    type: LOAD_REPOS_ERROR,
+    type: LOAD_MESSAGES_ERROR,
     error,
+  };
+}
+/**
+ * @param {string} message
+ * @return {string}
+ */
+export function addMessage(message) {
+  return {
+    type: ADD_MESSAGE,
+    message,
+  };
+}
+
+export function updateMessage() {
+  return {
+    type: UPDATE_MESSAGE,
   };
 }

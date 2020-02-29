@@ -6,7 +6,7 @@ const textinbubbleStyles = css`
   color: #fff;
   border-radius: 7px;
   top: 450px;
-  left: 50%;
+  left: 46%;
   width: 200px;
   height: 100px;
   padding: 5px;
