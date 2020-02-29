@@ -8,37 +8,49 @@
  */
 
 import produce from 'immer';
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
+import {
+  LOAD_MESSAGES_SUCCESS,
+  LOAD_MESSAGES,
+  LOAD_MESSAGES_ERROR,
+  ADD_MESSAGE,
+} from './constants';
 
 // The initial state of the App
 export const initialState = {
   loading: false,
   error: false,
-  currentUser: false,
-  userData: {
-    repositories: false,
-  },
+  messages: [],
+  message: '',
+  message_index: 0,
 };
 
 /* eslint-disable default-case, no-param-reassign */
 const appReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case LOAD_REPOS:
+      case LOAD_MESSAGES:
         draft.loading = true;
         draft.error = false;
-        draft.userData.repositories = false;
         break;
 
-      case LOAD_REPOS_SUCCESS:
-        draft.userData.repositories = action.repos;
+      case LOAD_MESSAGES_SUCCESS:
+        draft.messages = action.messages;
         draft.loading = false;
-        draft.currentUser = action.username;
         break;
 
-      case LOAD_REPOS_ERROR:
+      case LOAD_MESSAGES_ERROR:
         draft.error = action.error;
         draft.loading = false;
+        break;
+
+      case ADD_MESSAGE:
+        draft.message = action.message;
+        // eslint-disable-next-line no-case-declarations, prefer-const
+        let messageIndex = state.messages.findIndex(
+          message => message.message === action.message,
+        );
+        draft.message_index =
+          state.messages.length === messageIndex + 1 ? 0 : messageIndex + 1;
         break;
     }
   });

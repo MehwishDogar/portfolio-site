@@ -4,7 +4,7 @@
 
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
-
+/*
 const selectGlobal = state => state.global || initialState;
 
 const selectRouter = state => state.router;
@@ -47,3 +47,26 @@ export {
   makeSelectRepos,
   makeSelectLocation,
 };
+*/
+
+const selectGlobal = state => state.global || initialState;
+
+const selectMessages = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.messages,
+  );
+
+const selectMessageIndex = () =>
+  createSelector(
+    selectGlobal,
+    globelState => globelState.message_index,
+  );
+
+const selectMessage = () =>
+  createSelector(
+    selectGlobal,
+    globelState => globelState.message,
+  );
+
+export { selectMessages, selectMessageIndex, selectMessage };

@@ -9,6 +9,12 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
+/* export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
 export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
-export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR'; */
+
+export const LOAD_MESSAGES = 'PORTFOLIO-SITE/APP/LOAD_MESSAGES';
+export const LOAD_MESSAGES_SUCCESS = 'PORTFOLIO-SITE/APP/LOAD_MESSAGES_SUCCESS';
+export const LOAD_MESSAGES_ERROR = 'PORTFOLIO-SITE/APP/LOAD_MESSAGES_ERROR';
+export const ADD_MESSAGE = 'PORTFOLIO-SITE/APP/ADD_MESSAGE';
+export const UPDATE_MESSAGE = 'PORTFOLIO-SITE/APP/UPDATE_MESSAGE';
