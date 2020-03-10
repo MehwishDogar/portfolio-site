@@ -1,10 +1,12 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import StyledCenterParagraph from './StyledCenterParagraph';
 
-const CenteredParagraph = () => (
-  <StyledCenterParagraph>
-    Space for paragraph content something is here for two to three line content
-  </StyledCenterParagraph>
+const CenteredParagraph = ({ paragraph }) => (
+  <StyledCenterParagraph>{paragraph}</StyledCenterParagraph>
 );
 
+CenteredParagraph.propTypes = {
+  paragraph: PropTypes.string,
+};
 export default CenteredParagraph;

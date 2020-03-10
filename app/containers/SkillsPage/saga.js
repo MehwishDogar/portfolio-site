@@ -5,7 +5,6 @@ import { skillsLoaded, skillLoadingError } from 'containers/SkillsPage/actions';
 import { requestAPI } from 'utils/request';
 
 export function* getSkills() {
-  // Select username from store
   const requestURL = `skills`;
 
   try {

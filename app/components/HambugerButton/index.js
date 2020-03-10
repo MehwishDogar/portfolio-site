@@ -11,7 +11,7 @@ const HamburgerButton = ({ onClick }) => (
 );
 
 HamburgerButton.propTypes = {
-  onClick: PropTypes.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default HamburgerButton;

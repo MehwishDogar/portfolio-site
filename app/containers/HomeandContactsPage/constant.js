@@ -1,0 +1,5 @@
+export const LOAD_CONTACTS = 'PORTFOLIO-SITE/HomeandContactsPage/LOAD_CONTACTS';
+export const LOAD_CONTACTS_SUCCESS =
+  'PORTFOLIO-SITE/HomeandContactsPage/LOAD_CONTACTS_SUCCESS';
+export const LOAD_CONTACTS_ERROR =
+  'PORTFOLIO-SITE/HomeandContactsPage/LOAD_CONTACTS_ERROR';
