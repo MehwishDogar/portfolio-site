@@ -12,9 +12,9 @@ import H1 from 'components/H1';
 import CenteredParagraph from 'components/CenteredParagraph';
 import SocialIcons from 'components/SocialIcons';
 import LinkedButton from 'components/linkedButton';
-import { selectContacts } from './selector';
+import { selectContacts, selectUrl } from './selector';
 import saga from './saga';
-import { loadContacts } from './actions';
+import { loadContacts, loadUrl } from './actions';
 import reducer from './reducer';
 
 const key = 'HomeandContactsPage';
@@ -32,8 +32,7 @@ function HomeandContactsPage({ contact, loadContacts }) {
       <H1>Single-Page Applications</H1>
       <CenteredParagraph />
       {contact.map(contact => (
-        <SocialIcons name={contact.name} />
-        // eslint-disable-next-line prettier/prettier
+        <SocialIcons logo={contact.logo} url={contact.url} />
       ))}
       or <LinkedButton />
     </Screen>
@@ -47,10 +46,12 @@ HomeandContactsPage.propTypes = {
 
 const mapStatToProps = createStructuredSelector({
   contact: selectContacts(),
+  url: selectUrl(),
 });
 
 const mapDispatchToProps = {
   loadContacts,
+  loadUrl,
 };
 
 const withConnect = connect(

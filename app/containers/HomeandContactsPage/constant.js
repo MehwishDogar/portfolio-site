@@ -3,3 +3,4 @@ export const LOAD_CONTACTS_SUCCESS =
   'PORTFOLIO-SITE/HomeandContactsPage/LOAD_CONTACTS_SUCCESS';
 export const LOAD_CONTACTS_ERROR =
   'PORTFOLIO-SITE/HomeandContactsPage/LOAD_CONTACTS_ERROR';
+export const LOAD_URL = 'PORTFOLIO_SITE/HomeandContactsPage/LOAD_URL';

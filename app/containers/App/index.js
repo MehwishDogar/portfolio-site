@@ -48,8 +48,8 @@ export default function App() {
         <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <TextinBubble />
       <Roboticgirl />
+      <TextinBubble />
       <GlobalStyle />
     </AppWrapper>
   );

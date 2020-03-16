@@ -6,10 +6,10 @@ const textinbubbleStyles = css`
   color: #fff;
   border-radius: 7px;
   top: 450px;
-  left: 46%;
-  width: 200px;
-  height: 100px;
-  padding: 5px;
+  left: 52%;
+  max-width: 230px;
+  max-height: 120px;
+  padding: 15px;
   z-index: 1;
   & :after {
     content: '';

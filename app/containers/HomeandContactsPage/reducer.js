@@ -5,12 +5,14 @@ import {
   LOAD_CONTACTS,
   LOAD_CONTACTS_SUCCESS,
   LOAD_CONTACTS_ERROR,
+  LOAD_URL,
 } from './constant';
 
 export const initialState = {
   loading: false,
   error: false,
   contact: [],
+  url: '',
 };
 
 const contactsReducer = (state = initialState, action) =>
@@ -29,6 +31,10 @@ const contactsReducer = (state = initialState, action) =>
       case LOAD_CONTACTS_ERROR:
         draft.error = action.error;
         draft.loading = false;
+        break;
+
+      case LOAD_URL:
+        draft.url = action.contact.url;
         break;
     }
   });

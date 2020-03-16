@@ -2,6 +2,7 @@ import {
   LOAD_CONTACTS,
   LOAD_CONTACTS_SUCCESS,
   LOAD_CONTACTS_ERROR,
+  LOAD_URL,
 } from './constant';
 
 /**
@@ -39,5 +40,17 @@ export function contactsLoadingError(error) {
   return {
     type: LOAD_CONTACTS_ERROR,
     error,
+  };
+}
+
+/**
+ * @return {object} An action object with the type of LOAD_CONTACTS
+ * @param {object} contact The current object
+ */
+
+export function loadUrl(contact) {
+  return {
+    type: LOAD_URL,
+    contact,
   };
 }

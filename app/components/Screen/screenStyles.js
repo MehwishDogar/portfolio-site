@@ -6,13 +6,14 @@ const screenStyles = css`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100%;
-  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
   & > div {
     display: table-cell;
     vertical-align: middle;
-    height: 100%;
-    padding: 0px 20px 200px;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 100px 20px 200px;
   }
 `;
 

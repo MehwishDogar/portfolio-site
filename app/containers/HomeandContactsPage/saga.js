@@ -4,7 +4,7 @@ import { LOAD_CONTACTS } from './constant';
 import { contactsLoaded, contactsLoadingError } from './actions';
 
 export function* getContacts() {
-  const requestURL = 'contact';
+  const requestURL = 'contacts';
 
   try {
     const contact = yield call(requestAPI, requestURL);
