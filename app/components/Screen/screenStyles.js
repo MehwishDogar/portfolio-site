@@ -2,12 +2,13 @@ import { css } from 'styled-components';
 
 const screenStyles = css`
   display: table;
-  position: absolute;
+  position: relative;
   justify-content: center;
   align-items: center;
   text-align: center;
   max-height: 100%;
   max-width: 100%;
+  vertical-align: middle;
   & > div {
     display: table-cell;
     vertical-align: middle;

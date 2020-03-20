@@ -21,7 +21,7 @@ const aboutmetabsStyles = css`
     cursor: pointer;
     color: #fff;
     font-size: 60%;
-    &:not(:first-child) {
+    & :not(first-child) {
       margin-left: 5px;
     }
   }

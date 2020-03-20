@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import linkedButtonStyles from './linkedButtonStyles';
 
-const StyledLinkedbutton = styled.a`
+const StyledLinkedbutton = styled.button`
   ${linkedButtonStyles};
 `;
 

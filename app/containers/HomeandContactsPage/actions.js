@@ -2,7 +2,9 @@ import {
   LOAD_CONTACTS,
   LOAD_CONTACTS_SUCCESS,
   LOAD_CONTACTS_ERROR,
-  LOAD_URL,
+  ADD_CONTENT,
+  LOAD_CONTENT_SUCCESS,
+  LOAD_CONTENT_ERROR,
 } from './constant';
 
 /**
@@ -44,13 +46,39 @@ export function contactsLoadingError(error) {
 }
 
 /**
- * @return {object} An action object with the type of LOAD_CONTACTS
- * @param {object} contact The current object
+ * @return {object} An action object with the type of ADD_CONTENT
+ * @param {object} content The current object
  */
 
-export function loadUrl(contact) {
+export function addContent(content) {
   return {
-    type: LOAD_URL,
-    contact,
+    type: ADD_CONTENT,
+    content,
+  };
+}
+
+/**
+ *  @param {object} content the content data
+ *  @return {object} An action object with the type of LOAD_CONTENT_SUCCESS passing the content
+ *
+ */
+
+export function contentLoaded(content) {
+  return {
+    type: LOAD_CONTENT_SUCCESS,
+    content,
+  };
+}
+
+/**
+ *
+ *  @param {object} error The error
+ *  @return {object} An action object with the type of LOAD_CONTENT_ERROR passing the error
+ */
+
+export function contentLoadingError(error) {
+  return {
+    type: LOAD_CONTENT_ERROR,
+    error,
   };
 }

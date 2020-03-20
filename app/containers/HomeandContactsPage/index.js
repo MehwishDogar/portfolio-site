@@ -12,29 +12,33 @@ import H1 from 'components/H1';
 import CenteredParagraph from 'components/CenteredParagraph';
 import SocialIcons from 'components/SocialIcons';
 import LinkedButton from 'components/linkedButton';
-import { selectContacts, selectUrl } from './selector';
+import { selectContacts, selectContent } from './selector';
 import saga from './saga';
-import { loadContacts, loadUrl } from './actions';
+import { loadContacts, addContent } from './actions';
 import reducer from './reducer';
 
 const key = 'HomeandContactsPage';
 
-function HomeandContactsPage({ contact, loadContacts }) {
+function HomeandContactsPage({ contact, loadContacts, content, addContent }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
   useEffect(() => {
     loadContacts();
+    addContent();
   }, []);
 
   return (
     <Screen>
       <ThinH1 />
       <H1>Single-Page Applications</H1>
-      <CenteredParagraph />
-      {contact.map(contact => (
-        <SocialIcons logo={contact.logo} url={contact.url} />
-      ))}
-      or <LinkedButton />
+      <CenteredParagraph paragraph={content.Home_paragraph} />
+      {contact
+        .filter(contact => contact.logo)
+        .map(contact => (
+          <SocialIcons logo={contact.logo} url={contact.url} />
+        ))}
+      or
+      <LinkedButton contacts={contact.filter(contact => !contact.logo)} />
     </Screen>
   );
 }
@@ -42,16 +46,18 @@ function HomeandContactsPage({ contact, loadContacts }) {
 HomeandContactsPage.propTypes = {
   contact: PropTypes.array,
   loadContacts: PropTypes.func,
+  content: PropTypes.object,
+  addContent: PropTypes.func,
 };
 
 const mapStatToProps = createStructuredSelector({
   contact: selectContacts(),
-  url: selectUrl(),
+  content: selectContent(),
 });
 
 const mapDispatchToProps = {
   loadContacts,
-  loadUrl,
+  addContent,
 };
 
 const withConnect = connect(
