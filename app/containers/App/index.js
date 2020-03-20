@@ -19,8 +19,8 @@ import TextinBubble from 'components/TextinBubble';
 import Roboticgirl from 'components/Roboticgirl';
 import GlobalStyle from '../../global-styles';
 import { allComponents } from '../../components';
-import { HomeandContactsPage } from '../HomeandContactsPage';
-import { AboutmePage } from '../AboutmePage';
+import HomeandContactsPage from '../HomeandContactsPage';
+import AboutmePage from '../AboutmePage';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -48,8 +48,8 @@ export default function App() {
         <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <TextinBubble />
       <Roboticgirl />
+      <TextinBubble />
       <GlobalStyle />
     </AppWrapper>
   );

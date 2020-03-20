@@ -1,14 +1,18 @@
 import React from 'react';
-import Img from '../Img';
+import PropTypes from 'prop-types';
 import StyledSocialIcons from './StyledSocialIcons';
-import MailIcon from '../../images/mail-icon.png';
-import LinkedinIcon from '../../images/linkedin-icon.png';
 
-const SocialIcons = () => (
-  <StyledSocialIcons href="">
-    <Img src={MailIcon} alt="" />
-    <Img src={LinkedinIcon} alt="" />
+const SocialIcons = ({ logo, url }) => (
+  <StyledSocialIcons>
+    <a href={url} target="_blank">
+      {logo}
+    </a>
   </StyledSocialIcons>
 );
+
+SocialIcons.propTypes = {
+  logo: PropTypes.string,
+  url: PropTypes.string,
+};
 
 export default SocialIcons;

@@ -4,8 +4,9 @@ const socialIconsStyles = css`
   padding: 10px;
   cursor: pointer;
   border-radius: 50%
+  background-color: #1a659e;
   display: inline-block;
-    & img {
+    & :only-child {
         max-width: 70px;
         max-height: 70px;
     }

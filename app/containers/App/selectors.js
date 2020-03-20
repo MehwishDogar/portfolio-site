@@ -60,13 +60,13 @@ const selectMessages = () =>
 const selectMessageIndex = () =>
   createSelector(
     selectGlobal,
-    globelState => globelState.message_index,
+    globalState => globalState.message_index,
   );
 
 const selectMessage = () =>
   createSelector(
     selectGlobal,
-    globelState => globelState.message,
+    globalState => globalState.message,
   );
 
 export { selectMessages, selectMessageIndex, selectMessage };

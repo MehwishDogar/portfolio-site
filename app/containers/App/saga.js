@@ -15,7 +15,7 @@ export function* addMessages() {
   const messages = yield select(selectMessages());
   const messageIndex = yield select(selectMessageIndex());
   yield put(addMessage(messages[messageIndex].message));
-  yield delay(3000);
+  yield delay(6000);
   yield put(updateMessage());
 }
 

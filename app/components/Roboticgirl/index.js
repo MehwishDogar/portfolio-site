@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledRoboticgirl from './StyledRoboticgirl';
-import roboticIcon from '../../images/robotic-Icon.png';
+import roboticIcon from '../../images/robotic.png';
 
 const Roboticgirl = () => (
   <StyledRoboticgirl>

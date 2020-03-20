@@ -2,28 +2,35 @@ import { css } from 'styled-components';
 
 const aboutmetabsStyles = css`
   display: inline-block;
-  border-top: 5px solid #111;
+  border-top: 5px solid #e6e6fa;
   white-space: nowrap;
   margin-top: 50px;
-  min-width: 300px;
+  min-width: 120px;
   & span {
     display: inline-block;
-    background-color: #888;
+    background-color: #5f9ea0;
     transform: scale(1.618);
     border-radius: 50%;
     position: relative;
     bottom: 28px;
-    width: 41.875px;
-    height: 41.875px;
-    line-height: 41.875px;
-    font-weight: 500;
+    width: 47px;
+    height: 47px;
+    line-height: 47px;
+    font-weight: 400;
     text-align: center;
     cursor: pointer;
     color: #fff;
-    font-size: 70%;
-    &:not(:first-child) {
-      margin-left: 50px;
+    font-size: 60%;
+    & :not(first-child) {
+      margin-left: 5px;
     }
+  }
+  & span:hover {
+    background-color: #191970;
+    width: 52px;
+    height: 52px;
+    font-size: 70%;
+    transition: 1s;
   }
 `;
 

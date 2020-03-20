@@ -10,7 +10,7 @@ const mainMenuStyles = css`
   opacity: 0.95;
   top: 0;
   left: 0;
-  background-color: blue;
+  background-color: #00bfff;
   z-index: 1;
 `;
 
