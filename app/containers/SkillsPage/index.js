@@ -20,7 +20,7 @@ function SkillsPage({ loading, error, skills, loadSkills }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
   useEffect(() => {
-    loadSkills('Mehwish');
+    loadSkills();
   }, []);
 
   return (

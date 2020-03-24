@@ -7,7 +7,7 @@ const mainMenuStyles = css`
   position: absolute;
   width: 100vw;
   height: 100vh;
-  opacity: 0.95;
+  opacity: 0.99;
   top: 0;
   left: 0;
   background-color: #00bfff;

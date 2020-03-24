@@ -7,9 +7,11 @@ import {
   contentLoaded,
   contentLoadingError,
 } from './actions';
+import getUsername from '../../utils/globalHelper';
 
 export function* getContacts() {
-  const requestURL = 'contacts';
+  const username = getUsername();
+  const requestURL = `contacts/?username=${username}`;
 
   try {
     const contact = yield call(requestAPI, requestURL);
@@ -24,7 +26,8 @@ export default function* contactsData() {
 }
 
 export function* getContent() {
-  const requestURL = 'config';
+  const username = getUsername();
+  const requestURL = `config/?username=${username}`;
 
   try {
     const content = yield call(requestAPI, requestURL);

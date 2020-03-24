@@ -12,11 +12,11 @@ const progressBarStyles = css`
   overflow: hidden;
   & :nth-child(2n + 1) > span {
     background: #87ceeb;
-    animation: slidevertical 3s linear 0s 1 normal none running;
+    animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & :nth-child(3n + 1) > span {
     background: #00fa9a;
-    animation: slidevertical 3s linear 0s 1 normal none running;
+    animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & > span {
     position: absolute;
@@ -27,7 +27,7 @@ const progressBarStyles = css`
     background-color: #cd5c5c;
     border-radius: 10px;
     transition: 2s all;
-    animation: slidevertical 3s linear 0s 1 normal none running;
+    animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & > div {
     position: absolute;

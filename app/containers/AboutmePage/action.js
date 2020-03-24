@@ -8,12 +8,14 @@ import {
 /**
  * @return {object} An action object with the type of ADD_TIMELINE
  * @param {object} timeline The current object
+ * @param {string} username The current username
  */
 
-export function loadTimeLine(timeline) {
+export function loadTimeLine(timeline, username) {
   return {
     type: LOAD_TIMELINE,
     timeline,
+    username,
   };
 }
 
