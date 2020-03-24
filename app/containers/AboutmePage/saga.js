@@ -1,10 +1,12 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { requestAPI } from 'utils/request';
+import getUsername from '../../utils/globalHelper';
 import { LOAD_TIMELINE } from './constant';
 import { timelineLoaded, timelineLoadingError } from './action';
 
 export function* loadTimeline() {
-  const requestURL = `timeline`;
+  const username = getUsername();
+  const requestURL = `timeline/?username=${username}`;
 
   try {
     const timeline = yield call(requestAPI, requestURL);

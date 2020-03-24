@@ -6,12 +6,12 @@ const linkedButtonStyles = css`
   margin: 0px 5px;
   border-radius: 0.236em;
   background: #1a659e;
-  border: none;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
   min-width: 40px;
   cursor: pointer;
+  border: 2px solid paleturquoise;
   & :hover > div {
     display: block;
   }
@@ -31,6 +31,7 @@ const linkedButtonStyles = css`
       border-bottom: 1px solid #808080;
       & :hover {
         background-color: #696969;
+        color: #fff;
       }
     }
   }

@@ -13,8 +13,8 @@ const aboutmetabsStyles = css`
     border-radius: 50%;
     position: relative;
     bottom: 28px;
-    width: 47px;
-    height: 47px;
+    width: 49px;
+    height: 49px;
     line-height: 47px;
     font-weight: 400;
     text-align: center;
@@ -27,10 +27,7 @@ const aboutmetabsStyles = css`
   }
   & span:hover {
     background-color: #191970;
-    width: 52px;
-    height: 52px;
-    font-size: 70%;
-    transition: 1s;
+    font-weight: 700;
   }
 `;
 

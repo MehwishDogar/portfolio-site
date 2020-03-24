@@ -9,6 +9,7 @@ import {
 } from 'containers/App/actions';
 
 import { requestAPI } from 'utils/request';
+import getUsername from '../../utils/globalHelper';
 
 // eslint-disable-next-line no-redeclare
 export function* addMessages() {
@@ -20,7 +21,8 @@ export function* addMessages() {
 }
 
 export function* getMessages() {
-  const requestURL = 'messages';
+  const username = getUsername();
+  const requestURL = `messages/?username=${username}`;
 
   try {
     const messages = yield call(requestAPI, requestURL);

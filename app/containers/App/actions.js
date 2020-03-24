@@ -28,11 +28,13 @@ import {
  *
  * @return {object} An action object with a type of LOAD_MESSAGES
  * @param  {string} message The current message
+ * @param {string} username The current user
  */
-export function loadMessages(message) {
+export function loadMessages(message, username) {
   return {
     type: LOAD_MESSAGES,
     message,
+    username,
   };
 }
 
