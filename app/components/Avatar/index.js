@@ -1,12 +1,16 @@
 import React from 'react';
-import Img from '../Img';
+import PropTypes from 'prop-types';
 import StyledAvatar from './StyledAvatar';
-import avatarIcon from '../../images/avatar-icon.png';
+import { BASE_BACKEND_URL } from '../../utils/constants';
 
-const Avatar = () => (
+const Avatar = ({ thumbnail }) => (
   <StyledAvatar>
-    <Img src={avatarIcon} alt="" />
+    <img src={`${BASE_BACKEND_URL}${thumbnail}`} alt="" />
   </StyledAvatar>
 );
+
+Avatar.propTypes = {
+  thumbnail: PropTypes.string,
+};
 
 export default Avatar;

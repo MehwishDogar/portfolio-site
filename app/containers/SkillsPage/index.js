@@ -10,17 +10,22 @@ import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
 import reducer from './reducer';
 import saga from './saga';
+import { configData } from '../App/saga';
 import { loadSkills } from './actions';
+import { addConfig } from '../App/actions';
 import { makeSelectSkills } from './selector';
+import { selectConfig } from '../App/selectors';
 
 const key = 'skillsPage';
 
 // eslint-disable-next-line no-shadow, no-unused-vars
-function SkillsPage({ loading, error, skills, loadSkills }) {
+function SkillsPage({ loading, error, skills, loadSkills, config, addConfig }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
+  useInjectSaga({ key: `${key}/config`, saga: configData });
   useEffect(() => {
     loadSkills();
+    addConfig();
   }, []);
 
   return (
@@ -29,7 +34,7 @@ function SkillsPage({ loading, error, skills, loadSkills }) {
         <ProgressBar name={skill.name} percentage={skill.percentage} />
       ))}
 
-      <CenteredParagraph />
+      <CenteredParagraph paragraph={config.skills_paragraph} />
     </Screen>
   );
 }
@@ -39,14 +44,18 @@ SkillsPage.propTypes = {
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   skills: PropTypes.array,
   loadSkills: PropTypes.func,
+  config: PropTypes.object,
+  addConfig: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
   skills: makeSelectSkills(),
+  config: selectConfig(),
 });
 
 const mapDispatchToProps = {
   loadSkills,
+  addConfig,
 };
 
 const withConnect = connect(

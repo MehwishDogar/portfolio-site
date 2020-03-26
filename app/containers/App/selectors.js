@@ -69,4 +69,10 @@ const selectMessage = () =>
     globalState => globalState.message,
   );
 
-export { selectMessages, selectMessageIndex, selectMessage };
+const selectConfig = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.config,
+  );
+
+export { selectMessages, selectMessageIndex, selectMessage, selectConfig };

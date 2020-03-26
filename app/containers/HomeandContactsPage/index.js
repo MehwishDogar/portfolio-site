@@ -12,26 +12,30 @@ import H1 from 'components/H1';
 import CenteredParagraph from 'components/CenteredParagraph';
 import SocialIcons from 'components/SocialIcons';
 import LinkedButton from 'components/linkedButton';
-import { selectContacts, selectContent } from './selector';
+import { selectContacts } from './selector';
+import { selectConfig } from '../App/selectors';
 import saga from './saga';
-import { loadContacts, addContent } from './actions';
+import { configData } from '../App/saga';
+import { loadContacts } from './actions';
+import { addConfig } from '../App/actions';
 import reducer from './reducer';
 
 const key = 'HomeandContactsPage';
 
-function HomeandContactsPage({ contact, loadContacts, content, addContent }) {
+function HomeandContactsPage({ contact, loadContacts, config, addConfig }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
+  useInjectSaga({ key: `${key}/config`, saga: configData });
   useEffect(() => {
     loadContacts();
-    addContent();
+    addConfig();
   }, []);
 
   return (
     <Screen>
-      <ThinH1 />
-      <H1>Single-Page Applications</H1>
-      <CenteredParagraph paragraph={content.Home_paragraph} />
+      <H1 title={config.title} />
+      <ThinH1 secondaryTitle={config.secondary_title} />
+      <CenteredParagraph paragraph={config.home_paragraph} />
       {contact
         .filter(contact => contact.logo)
         .map(contact => (
@@ -46,18 +50,18 @@ function HomeandContactsPage({ contact, loadContacts, content, addContent }) {
 HomeandContactsPage.propTypes = {
   contact: PropTypes.array,
   loadContacts: PropTypes.func,
-  content: PropTypes.object,
-  addContent: PropTypes.func,
+  config: PropTypes.object,
+  addConfig: PropTypes.func,
 };
 
 const mapStatToProps = createStructuredSelector({
   contact: selectContacts(),
-  content: selectContent(),
+  config: selectConfig(),
 });
 
 const mapDispatchToProps = {
   loadContacts,
-  addContent,
+  addConfig,
 };
 
 const withConnect = connect(

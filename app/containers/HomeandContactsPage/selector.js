@@ -9,10 +9,4 @@ const selectContacts = () =>
     globalState => globalState.contact,
   );
 
-const selectContent = () =>
-  createSelector(
-    selectGlobal,
-    globalState => globalState.content,
-  );
-
-export { selectContacts, selectContent };
+export { selectContacts };
