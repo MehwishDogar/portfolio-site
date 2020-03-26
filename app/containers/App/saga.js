@@ -1,11 +1,17 @@
 import { call, put, select, takeLatest, delay } from 'redux-saga/effects';
-import { LOAD_MESSAGES, UPDATE_MESSAGE } from 'containers/App/constants';
+import {
+  LOAD_MESSAGES,
+  UPDATE_MESSAGE,
+  ADD_CONFIG,
+} from 'containers/App/constants';
 import { selectMessages, selectMessageIndex } from 'containers/App/selectors';
 import {
   messagesLoaded,
   messageLoadingError,
   addMessage,
   updateMessage,
+  configLoaded,
+  configLoadingError,
 } from 'containers/App/actions';
 
 import { requestAPI } from 'utils/request';
@@ -36,4 +42,20 @@ export function* getMessages() {
 export default function* messageData() {
   yield takeLatest(LOAD_MESSAGES, getMessages);
   yield takeLatest(UPDATE_MESSAGE, addMessages);
+}
+
+export function* getConfig() {
+  const username = getUsername();
+  const requestURL = `config/?username=${username}`;
+
+  try {
+    const config = yield call(requestAPI, requestURL);
+    yield put(configLoaded(config));
+  } catch (err) {
+    yield put(configLoadingError(err));
+  }
+}
+
+export function* configData() {
+  yield takeLatest(ADD_CONFIG, getConfig);
 }

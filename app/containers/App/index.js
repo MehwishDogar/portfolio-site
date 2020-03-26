@@ -6,17 +6,27 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
+import React, { useEffect, memo } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { useInjectReducer } from 'utils/injectReducer';
+import { useInjectSaga } from 'utils/injectSaga';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 
 import SkillsPage from 'containers/SkillsPage';
 import TextinBubble from 'components/TextinBubble';
-import Roboticgirl from 'components/Roboticgirl';
+import Robotic from 'components/Robotic';
+import { addConfig } from './actions';
+import { configData } from './saga';
+import { selectConfig } from './selectors';
+import reducer from './reducer';
 import GlobalStyle from '../../global-styles';
 import { allComponents } from '../../components';
 import HomeandContactsPage from '../HomeandContactsPage';
@@ -31,7 +41,15 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
-export default function App() {
+const key = 'App';
+
+function App({ config }) {
+  useInjectReducer({ key, reducer });
+  useInjectSaga({ key: `${key}/config`, saga: configData });
+  useEffect(() => {
+    addConfig();
+  }, []);
+
   return (
     <AppWrapper>
       <Helmet
@@ -48,9 +66,31 @@ export default function App() {
         <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Roboticgirl />
+      <Robotic roboticImg={config.robot_image} />
       <TextinBubble />
       <GlobalStyle />
     </AppWrapper>
   );
 }
+
+App.propTypes = {
+  config: PropTypes.object,
+};
+
+const mapStatToProps = createStructuredSelector({
+  config: selectConfig(),
+});
+
+const mapDispatchToProps = {
+  addConfig,
+};
+
+const withConnect = connect(
+  mapStatToProps,
+  mapDispatchToProps,
+);
+
+export default compose(
+  withConnect,
+  memo,
+)(App);

@@ -21,6 +21,9 @@ import {
   LOAD_MESSAGES_ERROR,
   ADD_MESSAGE,
   UPDATE_MESSAGE,
+  ADD_CONFIG,
+  LOAD_CONFIG_SUCCESS,
+  LOAD_CONFIG_ERROR,
 } from './constants';
 
 /**
@@ -79,5 +82,43 @@ export function addMessage(message) {
 export function updateMessage() {
   return {
     type: UPDATE_MESSAGE,
+  };
+}
+
+/**
+ * @return {object} An action object with the type of ADD_CONFIG
+ * @param {object} config The current object
+ */
+
+export function addConfig(config) {
+  return {
+    type: ADD_CONFIG,
+    config,
+  };
+}
+
+/**
+ *  @param {object} config the config data
+ *  @return {object} An action object with the type of LOAD_CONFIG_SUCCESS passing the config
+ *
+ */
+
+export function configLoaded(config) {
+  return {
+    type: LOAD_CONFIG_SUCCESS,
+    config,
+  };
+}
+
+/**
+ *
+ *  @param {object} error The error
+ *  @return {object} An action object with the type of LOAD_CONFIG_ERROR passing the error
+ */
+
+export function configLoadingError(error) {
+  return {
+    type: LOAD_CONFIG_ERROR,
+    error,
   };
 }

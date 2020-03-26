@@ -13,6 +13,9 @@ import {
   LOAD_MESSAGES,
   LOAD_MESSAGES_ERROR,
   ADD_MESSAGE,
+  ADD_CONFIG,
+  LOAD_CONFIG_SUCCESS,
+  LOAD_CONFIG_ERROR,
 } from './constants';
 
 // The initial state of the App
@@ -22,6 +25,7 @@ export const initialState = {
   messages: [],
   message: '',
   message_index: 0,
+  config: {},
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -51,6 +55,21 @@ const appReducer = (state = initialState, action) =>
         );
         draft.message_index =
           state.messages.length === messageIndex + 1 ? 0 : messageIndex + 1;
+        break;
+
+      case ADD_CONFIG:
+        draft.loading = true;
+        draft.error = false;
+        break;
+
+      case LOAD_CONFIG_SUCCESS:
+        draft.config = action.config;
+        draft.loading = false;
+        break;
+
+      case LOAD_CONFIG_ERROR:
+        draft.error = action.error;
+        draft.loading = false;
         break;
     }
   });

@@ -1,3 +1,4 @@
+import { BASE_BACKEND_URL } from './constants';
 /**
  * Parses the JSON returned by a network request
  *
@@ -44,6 +45,5 @@ export default function request(url, options) {
 }
 
 export function requestAPI(url, options) {
-  const baseURL = 'https://portfoliosite-backend.herokuapp.com/api/';
-  return request(`${baseURL}${url}`, options);
+  return request(`${BASE_BACKEND_URL}/api/${url}`, options);
 }
