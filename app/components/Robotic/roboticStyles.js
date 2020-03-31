@@ -5,20 +5,16 @@ const roboticgirlStyles = css`
   z-index: 6;
   bottom: 15px;
   right: 15px;
-  animation: 1s slidein;
+  @media (max-width: 600px) {
+    position: relative;
+    float: right;
+  }
   & img {
     max-height: 300px;
     min-height: 150px;
-    right: 10px;
     bottom: 60px;
-  }
-  @keyframes slidein {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
+    float: right;
+    float: bottom;
   }
 `;
 

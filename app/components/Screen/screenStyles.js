@@ -15,6 +15,9 @@ const screenStyles = css`
     min-height: 100%;
     min-width: 100%;
     padding: 100px 20px 200px;
+    @media (max-width: 600px) {
+      padding: 60px 20px 0px;
+    }
   }
 `;
 

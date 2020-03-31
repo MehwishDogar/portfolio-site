@@ -2,7 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { requestAPI } from 'utils/request';
 import { LOAD_CONTACTS } from './constant';
 import { contactsLoaded, contactsLoadingError } from './actions';
-import getUsername from '../../utils/globalHelper';
+import { getUsername } from '../../utils/globalHelper';
 
 export function* getContacts() {
   const username = getUsername();

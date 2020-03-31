@@ -3,7 +3,7 @@ import { LOAD_SKILLS } from 'containers/SkillsPage/constants';
 import { skillsLoaded, skillLoadingError } from 'containers/SkillsPage/actions';
 
 import { requestAPI } from 'utils/request';
-import getUsername from '../../utils/globalHelper';
+import { getUsername } from '../../utils/globalHelper';
 // return api url: baseurl/skills/?username=mehwishumar
 export function* getSkills() {
   const username = getUsername();

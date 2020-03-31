@@ -2,13 +2,13 @@ import { css } from 'styled-components';
 
 const backgroundImageStyles = css`
   position: absolute;
-  top: 5px;
+  top: 5%;
   left: 0px;
   z-index: auto;
   opacity: 0.3;
   & > img {
     max-height: 80%;
-    max-width: 70%;
+    max-width: 80%;
     animation: 3s linear 1s infinite alternate running slideimg;
   }
   @keyframes slideimg {
@@ -21,6 +21,11 @@ const backgroundImageStyles = css`
     to {
       transform: translateY(0px);
     }
+  }
+  @media (max-width: 600px) {
+    top: 20%;
+    max-height: 100%;
+    max-width: 100%;
   }
 `;
 

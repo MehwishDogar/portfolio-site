@@ -15,7 +15,7 @@ import {
 } from 'containers/App/actions';
 
 import { requestAPI } from 'utils/request';
-import getUsername from '../../utils/globalHelper';
+import { getUsername } from '../../utils/globalHelper';
 
 // eslint-disable-next-line no-redeclare
 export function* addMessages() {

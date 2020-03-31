@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { requestAPI } from 'utils/request';
-import getUsername from '../../utils/globalHelper';
+import { getUsername } from '../../utils/globalHelper';
 import { LOAD_TIMELINE } from './constant';
 import { timelineLoaded, timelineLoadingError } from './action';
 
