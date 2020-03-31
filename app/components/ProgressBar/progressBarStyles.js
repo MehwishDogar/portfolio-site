@@ -11,11 +11,17 @@ const progressBarStyles = css`
   height: 200px;
   overflow: hidden;
   & :nth-child(2n + 1) > span {
-    background: #87ceeb;
+    background: #1fab89;
+    background: linear-gradient(-45deg, #5c8d89, #a0edf7, #dbff3d, #0ea5c6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & :nth-child(3n + 1) > span {
-    background: #00fa9a;
+    background: #5c3b6f;
+    background: linear-gradient(-45deg, #f16f6f, #ef5a5a, #ffb997, #264e70);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & > span {
@@ -24,7 +30,10 @@ const progressBarStyles = css`
     display: block;
     height: 0%;
     width: 30px;
-    background-color: #cd5c5c;
+    background-color: #ff4057;
+    background: linear-gradient(-45deg, #e61c5d, #5c3b6f, #ffe98a, #90007f);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     border-radius: 10px;
     transition: 2s all;
     animation: slidevertical 1s linear 0s 1 normal none running;
@@ -49,6 +58,17 @@ const progressBarStyles = css`
     }
     100% {
       transform: scaleY(1);
+    }
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 `;

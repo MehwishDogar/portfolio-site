@@ -8,7 +8,7 @@ const aboutmetabsStyles = css`
   min-width: 120px;
   & span {
     display: inline-block;
-    background-color: #5f9ea0;
+    background-color: #27496d;
     transform: scale(1.618);
     border-radius: 50%;
     position: relative;

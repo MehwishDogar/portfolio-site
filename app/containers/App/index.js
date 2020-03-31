@@ -28,7 +28,6 @@ import { configData } from './saga';
 import { selectConfig } from './selectors';
 import reducer from './reducer';
 import GlobalStyle from '../../global-styles';
-import { allComponents } from '../../components';
 import HomeandContactsPage from '../HomeandContactsPage';
 import AboutmePage from '../AboutmePage';
 
@@ -63,7 +62,6 @@ function App({ config }) {
         <Route exact path="/" component={HomeandContactsPage} />
         <Route path="/skills" component={SkillsPage} />
         <Route path="/aboutme" component={AboutmePage} />
-        <Route path="/components" component={allComponents} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Robotic roboticImg={config.robot_image} />
