@@ -11,6 +11,7 @@ const textinbubbleStyles = css`
   max-height: 150px;
   padding: 15px;
   z-index: 1;
+  animation: move 5s infinite;
   background-image: linear-gradient(to right, #364e68, #132238);
   & :after {
     content: '';
@@ -31,8 +32,13 @@ const textinbubbleStyles = css`
     position: relative;
     right: 3px;
     bottom: 190px;
-    max-width: 200px;
-    max-height: 190px;
+    max-width: 205px;
+    max-height: 185px;
+  }
+  @keyframes move {
+    50% {
+      box-shadow: 10px 15px 25px #69779b;
+    }
   }
 `;
 

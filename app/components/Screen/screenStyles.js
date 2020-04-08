@@ -16,7 +16,7 @@ const screenStyles = css`
     min-width: 100%;
     padding: 100px 20px 200px;
     @media (max-width: 600px) {
-      padding: 60px 20px 0px;
+      padding: 70px 0px 0px;
     }
   }
 `;

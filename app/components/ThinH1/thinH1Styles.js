@@ -1,7 +1,8 @@
 import { css } from 'styled-components';
 
 const thinH1Styles = css`
-  font-weight: 100;
+  font-weight: 400;
+  font-size: 32px;
   animation: slide 1s ease-out 1 both;
   @keyframes slide {
     from {
