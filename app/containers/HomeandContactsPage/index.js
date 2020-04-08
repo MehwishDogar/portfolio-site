@@ -10,7 +10,6 @@ import Screen from 'components/Screen';
 import ThinH1 from 'components/ThinH1';
 import H1 from 'components/H1';
 import CenteredParagraph from 'components/CenteredParagraph';
-import BackgroundImage from 'components/BackgroundImage';
 import SocialIcons from 'components/SocialIcons';
 import LinkedButton from 'components/linkedButton';
 import { selectContacts } from './selector';
@@ -44,7 +43,6 @@ function HomeandContactsPage({ contact, loadContacts, config, addConfig }) {
         ))}
       or
       <LinkedButton contacts={contact.filter(contact => !contact.logo)} />
-      <BackgroundImage />
     </Screen>
   );
 }

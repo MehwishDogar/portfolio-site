@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 
 const h1Styles = css`
-  font-size: 2em;
-  margin-bottom: 0.25em;
+  font-size: 42px;
+  margin-bottom: 2px;
   animation: slide 1s ease-out 1 both;
   @keyframes slide {
     from {

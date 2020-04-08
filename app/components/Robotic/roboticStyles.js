@@ -8,11 +8,11 @@ const roboticgirlStyles = css`
   @media (max-width: 600px) {
     position: relative;
     float: right;
+    float: bottom;
   }
   & img {
     max-height: 300px;
     min-height: 150px;
-    bottom: 60px;
     float: right;
     float: bottom;
   }
