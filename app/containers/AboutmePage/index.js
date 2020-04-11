@@ -44,12 +44,7 @@ function AboutmePage({
     <Screen>
       <Avatar thumbnail={config.user_thumbnail} />
       <CenteredParagraph paragraph={paragraph || config.about_paragraph} />
-      {timeline.map(timeline => (
-        <AboutmeTabs
-          name={timeline.name}
-          onClick={e => loadParagraph(timeline)}
-        />
-      ))}
+      <AboutmeTabs timeline={timeline} loadParagraph={loadParagraph} />
     </Screen>
   );
 }

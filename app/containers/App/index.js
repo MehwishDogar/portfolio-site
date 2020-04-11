@@ -21,7 +21,6 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 
 import SkillsPage from 'containers/SkillsPage';
-import TextinBubble from 'components/TextinBubble';
 import Robotic from 'components/Robotic';
 import { addConfig } from './actions';
 import { configData } from './saga';
@@ -65,7 +64,6 @@ function App({ config }) {
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Robotic roboticImg={config.robot_image} />
-      <TextinBubble />
       <GlobalStyle />
     </AppWrapper>
   );
