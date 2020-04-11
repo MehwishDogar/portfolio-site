@@ -11,6 +11,7 @@ const textinbubbleStyles = css`
   max-width: 250px;
   padding: 15px;
   z-index: 1;
+  animation: move 5s infinite;
   background-image: linear-gradient(to right, #364e68, #132238);
   & :after {
     content: '';

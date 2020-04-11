@@ -4,7 +4,7 @@ export function getUsername() {
   }
   const hostName = window.location.hostname.split('.');
   let userName = hostName[0];
-  if (hostName.length >= 2) {
+  if (hostName.length > 2) {
     [, userName] = hostName;
   }
   return userName;

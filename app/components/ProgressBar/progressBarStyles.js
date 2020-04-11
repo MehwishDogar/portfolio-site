@@ -39,12 +39,12 @@ const progressBarStyles = css`
     animation: slidevertical 1s linear 0s 1 normal none running;
   }
   & > div {
-    position: absolute;
-    bottom: -2px;
+    position: relative;
+    top: 98%;
     transform: rotate(-90deg);
     transform-origin: left top;
     height: 20px;
-    width: 100px;
+    width: 130px;
     font-family: sans-serif;
     font-weight: bold;
     line-height: 1.6;

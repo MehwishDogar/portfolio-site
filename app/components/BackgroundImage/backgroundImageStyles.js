@@ -9,7 +9,9 @@ const backgroundImageStyles = css`
   & > img {
     max-height: 80%;
     max-width: 80%;
-    animation: 3s linear 1s infinite alternate running slideimg;
+  }
+  & :hover {
+    animation: 3s linear 1s 5 alternate running slideimg;
   }
   @keyframes slideimg {
     from {
