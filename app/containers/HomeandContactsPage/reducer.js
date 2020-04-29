@@ -10,7 +10,12 @@ import {
 export const initialState = {
   loading: false,
   error: false,
-  contact: [],
+  contact: [
+    {
+      url: '',
+      name: '',
+    },
+  ],
 };
 
 const contactsReducer = (state = initialState, action) =>

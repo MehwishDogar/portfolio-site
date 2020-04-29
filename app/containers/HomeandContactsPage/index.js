@@ -22,7 +22,13 @@ import reducer from './reducer';
 
 const key = 'HomeandContactsPage';
 
-function HomeandContactsPage({ contact, loadContacts, config, addConfig }) {
+function HomeandContactsPage({
+  contact,
+  loadContacts,
+  config,
+  addConfig,
+  location,
+}) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
   useInjectSaga({ key: `${key}/config`, saga: configData });
@@ -42,7 +48,10 @@ function HomeandContactsPage({ contact, loadContacts, config, addConfig }) {
           <SocialIcons logo={contact.logo} url={contact.url} />
         ))}
       or
-      <LinkedButton contacts={contact.filter(contact => !contact.logo)} />
+      <LinkedButton
+        location={location}
+        contacts={contact.filter(contact => !contact.logo)}
+      />
     </Screen>
   );
 }
@@ -52,6 +61,7 @@ HomeandContactsPage.propTypes = {
   loadContacts: PropTypes.func,
   config: PropTypes.object,
   addConfig: PropTypes.func,
+  location: PropTypes.object,
 };
 
 const mapStatToProps = createStructuredSelector({

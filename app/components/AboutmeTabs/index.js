@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { cloneDeep } from 'lodash';
 import { produce } from 'immer';
 import StyledAboutmeTabs from './StyledAboutmeTabs';
 
-import { setClassName } from './helper';
-
-const getItems = items => {
-  if (items.length > 0) {
-    setClassName(items, 0);
-  }
-  return items;
-};
-
 const AboutmeTabs = ({ timeline, loadParagraph }) => {
-  const [items, setItems] = useState(getItems(cloneDeep(timeline)));
+  const [items, setItems] = useState(timeline);
 
   const handleItems = (item, index) => {
     setItems(
       produce(draftItems => {
-        setClassName(draftItems, index);
+        const selectedItem = draftItems[index];
+        selectedItem.class = 'active';
+        draftItems.slice(0, index).forEach(prevItem => {
+          // eslint-disable-next-line no-param-reassign
+          prevItem.class = 'done';
+        });
+        draftItems.slice(index + 1).forEach(nextItem => {
+          // eslint-disable-next-line no-param-reassign
+          nextItem.class = 'next';
+        });
       }),
     );
     loadParagraph(item);
@@ -30,7 +29,11 @@ const AboutmeTabs = ({ timeline, loadParagraph }) => {
       {items.map((item, index) => (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <span
-          className={item.className}
+          className={
+            item.class === undefined && index === 0
+              ? `timeline active`
+              : `timeline ${item.class}`
+          }
           onClick={() => handleItems(item, index)}
         >
           {item.name}
