@@ -3,10 +3,10 @@ import { css } from 'styled-components';
 const roboticgirlStyles = css`
   position: absolute;
   z-index: 1;
-  bottom: 15px;
-  right: 15px;
+  bottom: 10px;
+  right: 10px;
   text-align: right;
-  padding: 50px;
+  padding: 20px;
   @media (max-width: 600px) {
     position: relative;
     bottom: unset;

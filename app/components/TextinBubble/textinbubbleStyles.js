@@ -7,9 +7,9 @@ const textinbubbleStyles = css`
   border-radius: 7px;
   display: inline-block;
   text-align: left;
-  margin-right: 25px;
+  margin-right: 15px;
   max-width: 250px;
-  padding: 15px;
+  padding: 10px;
   z-index: 1;
   animation: move 5s infinite;
   background-image: linear-gradient(to right, #364e68, #132238);

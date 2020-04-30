@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const linkedButtonStyles = css`
   display: inline-block;
-  margin: 0px 5px;
+  margin: 0px 10px;
 
   & a.button,
   div.dropdown {
@@ -10,13 +10,12 @@ const linkedButtonStyles = css`
     padding: 10px 10px;
     margin: 0;
     text-align: center;
-    background: #1a659e;
+    background: #46b3e6;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
     min-width: 40px;
     cursor: pointer;
-    background-image: linear-gradient(to right, #25aae1, #3f86ed);
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
   }
 
@@ -33,13 +32,13 @@ const linkedButtonStyles = css`
 
   & div.dropdown:hover > div {
     display: block;
-    background-image: linear-gradient(to right, #25aae1, #3f86ed);
+    background-color: #25aae1;
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
   }
   & div.dropdown > div {
     display: none;
     position: absolute;
-    background-color: #c0c0c0;
+    background-color: #46b3e6;
     min-width: 160px;
     z-index: 1;
     margin-top: 12px;
@@ -51,7 +50,7 @@ const linkedButtonStyles = css`
       display: block;
       border-bottom: 1px solid #808080;
       & :hover {
-        background-image: linear-gradient(to right, #30dd8a, #2bb673);
+        background-color: #1b2a49;
         box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
         color: #fff;
       }

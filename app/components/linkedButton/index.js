@@ -11,7 +11,7 @@ const linkedButton = ({ contacts, location }) => {
     contacts[0];
   return (
     <StyledLinkedbutton>
-      <a className="button" href={mainContact.url}>
+      <a className="button" href={mainContact.url} target="_blank">
         Hire me on {mainContact.name}
       </a>
       <div className="dropdown">
