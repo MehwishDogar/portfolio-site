@@ -44,7 +44,9 @@ function AboutmePage({
     <Screen>
       <Avatar thumbnail={config.user_thumbnail} />
       <CenteredParagraph paragraph={paragraph || config.about_paragraph} />
-      <AboutmeTabs timeline={timeline} loadParagraph={loadParagraph} />
+      {timeline.length > 0 && (
+        <AboutmeTabs timeline={timeline} loadParagraph={loadParagraph} />
+      )}
     </Screen>
   );
 }
