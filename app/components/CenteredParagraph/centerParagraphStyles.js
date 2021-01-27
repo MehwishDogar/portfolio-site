@@ -5,6 +5,7 @@ const centerParagraphStyles = css`
   font: inherit;
   font-size: 18px;
   display: block;
+  margin-bottom: 10px;
 `;
 
 export default centerParagraphStyles;

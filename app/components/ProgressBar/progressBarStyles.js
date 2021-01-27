@@ -30,6 +30,8 @@ const progressBarStyles = css`
     display: block;
     height: 0%;
     width: 30px;
+    transform: translateZ(0);
+    transform-origin: bottom center;
     background-color: #ff4057;
     background: linear-gradient(-45deg, #e61c5d, #5c3b6f, #ffe98a, #90007f);
     background-size: 400% 400%;

@@ -2,29 +2,43 @@ import { css } from 'styled-components';
 
 const linkedButtonStyles = css`
   display: inline-block;
-  padding: 10px 10px;
-  margin: 0px 5px;
-  border-radius: 10px;
-  text-align: center;
-  background: #1a659e;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  min-width: 40px;
-  cursor: pointer;
-  border: 2px solid paleturquoise;
-  background-image: linear-gradient(to right, #25aae1, #3f86ed);
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-  animation: attention 1s ease-out 5 alternate;
-  & :hover > div {
-    display: block;
-    background-image: linear-gradient(to right, #25aae1, #3f86ed);
+  margin: 0px 10px;
+
+  & a.button,
+  div.dropdown {
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    text-align: center;
+    background: #46b3e6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    min-width: 40px;
+    cursor: pointer;
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
   }
-  & > div {
+
+  & a.button {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    animation: attention 1s ease-out 5 alternate;
+  }
+
+  & div.dropdown {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  & div.dropdown:hover > div {
+    display: block;
+    background-color: #25aae1;
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  }
+  & div.dropdown > div {
     display: none;
     position: absolute;
-    background-color: #c0c0c0;
+    background-color: #46b3e6;
     min-width: 160px;
     z-index: 1;
     margin-top: 12px;
@@ -36,7 +50,7 @@ const linkedButtonStyles = css`
       display: block;
       border-bottom: 1px solid #808080;
       & :hover {
-        background-image: linear-gradient(to right, #30dd8a, #2bb673);
+        background-color: #1b2a49;
         box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
         color: #fff;
       }
